@@ -3,10 +3,23 @@ import { CommonModule } from '@angular/common';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { RouterLink } from '@angular/router';
 import { MainComponent } from './main/main.component';
+import { ItemListComponent } from './item-list/item-list.component';
+import { PushPipe } from '@rx-angular/template/push';
+import { ItemFormComponent } from './item-form/item-form.component';
 
 @NgModule({
-  imports: [CommonModule, RouterLink],
-  declarations: [ToolbarComponent, MainComponent],
-  exports: [ToolbarComponent, MainComponent],
+  imports: [CommonModule, RouterLink, PushPipe],
+  declarations: [
+    ToolbarComponent,
+    MainComponent,
+    ItemListComponent,
+    ItemFormComponent,
+  ],
+  exports: [
+    ToolbarComponent,
+    MainComponent,
+    ItemListComponent,
+    ItemFormComponent,
+  ],
 })
 export class ComponentsLayoutModule {}
