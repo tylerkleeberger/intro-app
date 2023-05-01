@@ -11,7 +11,7 @@ import {PushPipe} from '@rx-angular/template/push';
     CommonModule,
     RouterModule.forChild(pagesLayoutRoutes),
     ComponentsLayoutModule,
-    PushPipe
+    PushPipe,
   ],
   declarations: [LayoutPage],
   exports: [LayoutPage],

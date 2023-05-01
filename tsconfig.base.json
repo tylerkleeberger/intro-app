@@ -18,6 +18,7 @@
       "~introduction/components/layout": [
         "libs/components/layout/src/index.ts"
       ],
+      "~introduction/components/main": ["libs/components/main/src/index.ts"],
       "~introduction/pages/layout": ["libs/pages/layout/src/index.ts"]
     }
   },
