@@ -9,7 +9,9 @@
           <!--Add Button-->
           <div class="row">
             <div class="col-xs-12">
-              <intro-main-form></intro-main-form>
+              <intro-main-form
+                (newItem)="addItem($event)"
+              ></intro-main-form>
 
             </div>
           </div>
@@ -20,7 +22,9 @@
             <div class="col-xs-12">
               <h2 class="text-center panel-title">Product List</h2>
               <div style="margin: 5%;"></div>
-              <intro-item-list></intro-item-list>
+              <intro-item-list
+                [items]="items"
+              ></intro-item-list>
             </div>
           </div>
         </div>

@@ -1,10 +1,5 @@
-export class introMainItem {
-  public name: string;
-  public description: string;
-
-  constructor(name: string, description: string) {
-    this.name = name;
-    this.description = description;
-  }
-
+export interface Item {
+  id: number;
+  name: string;
+  description: string;
 }

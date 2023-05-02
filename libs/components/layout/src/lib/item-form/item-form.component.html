@@ -7,16 +7,28 @@
   <!--Form Body Container-->
   <div class="panel-body">
        <!--Form-->
-    <form (ngSubmit)="onSubmit()">
+    <form (submit)="addNewItem(item)" #itemForm="ngForm">
       <div class="form-group">
         <!--Name Input-->
         <label for="name">Item Name:</label>
-        <input type="text" id="name" name="name"  required class="form-control">
+        <input
+          type="text"
+          id="name"
+          [(ngModel)]="item.name"
+          name="name"
+          required
+          class="form-control">
       </div>
       <div class="form-group">
         <!--Description Input-->
         <label for="description">Item Description:</label>
-        <textarea id="description" name="description"  required class="form-control"></textarea>
+        <input
+          type="text"
+          id="description"
+          [(ngModel)]="item.description"
+          name="description"
+          required
+          class="form-control">
       </div>
       <button type="submit" class="btn btn-success">Add New Product</button>
 

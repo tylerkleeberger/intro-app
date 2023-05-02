@@ -1,29 +1,36 @@
 import {Injectable} from '@angular/core';
-import {introMainItem} from './main-item.model';
+import {Item} from './main-item.model';
+import {Observable, of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ItemService {
 
-  private items: introMainItem[] = [
-    new introMainItem(
-      'Item 1',
-      'This is the first item',
-    ),
-    new introMainItem(
-      'Item 2',
-      'This is the second item',
-    ),
-  ]
+private items: Item[] = [
+  {
+    id: 1,
+    name: 'Item 1',
+    description: 'This is item 1',
+  },
+  {
+    id: 2,
+    name: 'Item 2',
+    description: 'This is item 2',
+  },
+  {
+    id: 3,
+    name: 'Item 3',
+    description: 'This is item 3',
+  }
+]
 
 
-
-  getItems() {
-    return this.items.slice();
+  getItems(): Observable<Item[]> {
+    return of(this.items);
   }
 
-  addItem(item: introMainItem) {
+  addItem(item: Item) {
     this.items.push(item);
   }
 

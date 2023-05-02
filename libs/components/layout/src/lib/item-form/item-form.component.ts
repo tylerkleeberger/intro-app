@@ -1,6 +1,7 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
 import {ItemService} from '../item.service';
-import {introMainItem} from '../main-item.model';
+import {NgForm} from '@angular/forms';
+import {Item} from '../main-item.model';
 
 @Component({
   selector: 'intro-main-form',
@@ -10,19 +11,14 @@ import {introMainItem} from '../main-item.model';
 })
 export class ItemFormComponent {
 
-  @Output() itemAdded = new EventEmitter();
-
-  @Input() items!: introMainItem[];
-  @Input() item!: introMainItem;
-
+@Input() public item: Item = { id: 0, name: '', description: '' };
+@Output() public newItem = new EventEmitter<Item>();
   constructor(
     private itemService: ItemService,
   ) {}
 
-  onSubmit() {
-    this.itemService.addItem(this.item);
-    this.itemAdded.emit();
-
+  addNewItem(value: Item) {
+    this.newItem.emit(value);
   }
 
 
