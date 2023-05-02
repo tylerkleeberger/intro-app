@@ -1,5 +1,4 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
-import {introMainItem} from '../main-item.model';
+import {ChangeDetectionStrategy, Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'intro-main-form',
@@ -9,17 +8,20 @@ import {introMainItem} from '../main-item.model';
 })
 export class ItemFormComponent {
 
-  currentItem: introMainItem = {name: '', description: ''};
-  originalItem = '';
+  @Output() itemAdded = new EventEmitter();
 
-  @Input() set item(value: introMainItem) {
-    if(value) this.originalItem = value.name;
-    this.currentItem = {...value}
+  name: string | undefined;
+  description: string | undefined;
+
+  onSubmit() {
+    const newItem = {
+      name: this.name,
+      description: this.description
+    };
+    this.itemAdded.emit(newItem);
+    this.name = '';
+    this.description = '';
   }
-
-  @Output() addItem = new EventEmitter();
-  @Output() cancelItem = new EventEmitter();
-
 
 
 }

@@ -9,8 +9,6 @@ import {introMainItem} from '../main-item.model';
 })
 export class ItemListComponent {
 
-  @Input() mainItems: introMainItem[] = [];
-  @Output() itemSelected = new EventEmitter<introMainItem>();
-  @Output() itemDeleted = new EventEmitter<introMainItem>();
+
 
 }

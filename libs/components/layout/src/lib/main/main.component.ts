@@ -1,4 +1,6 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {introMainItem} from '../main-item.model';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'intro-main-container',
@@ -8,7 +10,7 @@ import {ChangeDetectionStrategy, Component} from '@angular/core';
 })
 export class MainComponent {
 
-
+  
 
 
 }
