@@ -1,5 +1,6 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {introMainItem} from '../main-item.model';
+import {ItemService} from '../item.service';
 
 @Component({
   selector: 'intro-item-list',
@@ -7,8 +8,16 @@ import {introMainItem} from '../main-item.model';
   styleUrls: ['./item-list.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ItemListComponent {
+export class ItemListComponent implements OnInit{
 
+  items: introMainItem[] = [];
 
+  constructor(
+    private itemService: ItemService,
+  ) {}
+
+  ngOnInit() {
+    this.items = this.itemService.getItems();
+  }
 
 }

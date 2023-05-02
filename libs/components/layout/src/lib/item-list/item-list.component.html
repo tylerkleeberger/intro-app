@@ -1,12 +1,14 @@
 <a
   style="cursor: pointer;"
-  class="list-group-item clearfix">
+  class="list-group-item clearfix"
+  *ngFor="let item of items"
+  >
   <div class="pull-left">
     <h4 class="list-group-item-heading">
-      Item Title
+      {{item.name}}
     </h4>
     <p class="list-group-item-text">
-      Item Name
+      {{item.description}}
     </p>
   </div>
 

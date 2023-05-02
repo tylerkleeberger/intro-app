@@ -1,14 +1,20 @@
+<!--Form Heading Container-->
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">Add a Product</h3>
   </div>
+
+  <!--Form Body Container-->
   <div class="panel-body">
-    <form >
+       <!--Form-->
+    <form (ngSubmit)="onSubmit()">
       <div class="form-group">
+        <!--Name Input-->
         <label for="name">Item Name:</label>
         <input type="text" id="name" name="name"  required class="form-control">
       </div>
       <div class="form-group">
+        <!--Description Input-->
         <label for="description">Item Description:</label>
         <textarea id="description" name="description"  required class="form-control"></textarea>
       </div>
